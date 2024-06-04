@@ -8,11 +8,12 @@ trait ProjectTrait {
     /**
      * Get workspace projects
      *
+     * @param array $data Data payload that is to be sent with the request
      * @return  stdClass
      */
-    public function projects()
+    public function projects(array $data = array())
     {
-        return $this->sendGetMessage( $this->baseUrl . $this->apiVersionUrl .'/workspaces/'. $this->workspaceId .'/projects' );
+        return $this->sendGetMessage( $this->baseUrl . $this->apiVersionUrl .'/workspaces/'. $this->workspaceId .'/projects', $data );
     }
 
     /**
